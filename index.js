@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 const firebaseConfig = {
     databaseURL: config.DATABASE_URL,
@@ -28,6 +28,12 @@ function render(leads) {
     }
     ulEl.innerHTML = listItems
 }
+
+onValue(refereceInDB, function(snapshot) {
+    const snapshotVAlues = snapshot.val();
+    const leads = Object.values(snapshotVAlues)
+    render(leads)
+})
 
 deleteBtn.addEventListener("dblclick", function() {
 
