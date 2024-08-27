@@ -2,8 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/fireba
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
 
 const firebaseConfig = {
-    databaseURL: config.DATABASE_URL,
-    projectId: "leads-tracker-app-df200"
+    databaseURL: 'https://leads-tracker-app-df200-default-rtdb.europe-west1.firebasedatabase.app',
 }
 
 const app = initializeApp(firebaseConfig);
